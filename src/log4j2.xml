@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Configuration>
+ <Properties>
+      <Property name="log-path">target/logs</Property>
+</Properties>
+<Appenders>
+    <File name="File" fileName="${log-path}/execution.log" >
+        <PatternLayout>
+            <pattern>
+              [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+            </pattern>
+        </PatternLayout>
+    </File>
+    
+    <Console name="STDOUT" target="SYSTEM_OUT">
+        <PatternLayout>
+            <pattern>
+            [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+            </pattern>>
+        </PatternLayout>
+    </Console>
+
+</Appenders>
+<Loggers>
+    <Logger name="amazon"  level="debug"  additivity="false">
+        <AppenderRef ref="File"  level="info"/>
+        <AppenderRef ref="STDOUT" level="debug"/>
+    </Logger>
+    <Root level="all">
+        <AppenderRef ref="STDOUT"/>
+    </Root>
+</Loggers>
+</Configuration>
