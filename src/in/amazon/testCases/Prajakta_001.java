@@ -35,7 +35,7 @@ public class Prajakta_001 {
   
   }
 	@Test
-  public void praju_001() throws Exception {
+  public void praju_002() throws Exception {
 	  browser = BrowserInit.getBrowser(TestObjects.browserName);
 	  browser.get(TestObjects.url);
 	  HomePage.enterSearchText(browser, data.get(3));
